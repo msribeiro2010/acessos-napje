@@ -1,0 +1,369 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #dfe1e2);
+    color: #333;
+    padding: 0;
+}
+
+/* Layout Flexível: Navbar Lateral + Conteúdo Principal */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Navbar Lateral */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, #007bff, #87b2e0);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espaço entre os links e o footer */
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    transition: width 0.3s;
+}
+
+/* Header da Navbar */
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-logo img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Links da Navbar */
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.sidebar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-links a:hover,
+.sidebar-links a.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+}
+
+/* Footer da Navbar */
+.sidebar-footer {
+    background-color: #4f4f60; /* Fundo azul */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.sidebar-footer p {
+    color: #ddd8d8; /* Letras pretas */
+    font-style: italic;
+    transition: color 0.3s;
+}
+
+.sidebar-footer p:hover {
+    color: #333333;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    margin-left: 250px; /* Espaço para a navbar */
+    padding: 20px;
+    flex: 1;
+    background: #ffffff;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura */
+}
+
+/* Header Principal */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #6d84c6, #a2b9f0);
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Container de Data e Relógio */
+.date-time-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Input do Calendário */
+.calendar-input {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #041266;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 180px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.calendar-input::placeholder {
+    color: #555;
+}
+
+/* Relógio */
+.clock {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #041266;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 180px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Grupos de Links */
+.group {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background: #f9f9f9;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    display: none;
+}
+
+.group.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Header de Grupos */
+.group h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 20px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Subgrupos dentro dos Grupos */
+.subgroup {
+    margin-top: 15px;
+    padding: 15px;
+    border-left: 4px solid #4285f4;
+    background-color: #e3f2fd;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.subgroup h3 {
+    margin-bottom: 10px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botões */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.button-container button {
+    background: linear-gradient(135deg, #4a90db, #357ab7);
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.button-container button:hover {
+    background: linear-gradient(135deg, #357ab7, #285e9e);
+    transform: translateY(-3px);
+}
+
+.button-container button i {
+    font-size: 18px;
+}
+
+/* Botões Especiais */
+.btn-plantao {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+.btn-plantao:hover {
+    background: linear-gradient(135deg, #1e7e34, #155d27);
+}
+
+/* Cores Específicas para Cada Grupo */
+
+/* Google Apps - Azul Claro */
+.google-apps {
+    border-top: 4px solid #4285f4;
+    background: #e9ecf7;
+}
+
+/* Sistemas do PJe - Laranja */
+.pje {
+    border-top: 4px solid #f4b400;
+    background: #fff8e1;
+}
+
+/* ASSYST-PJe - Verde */
+.assyst {
+    border-top: 4px solid #34a853;
+    background: #e6f4ea;
+}
+
+/* Sistemas Satélites - Vermelho */
+.sistemas-satelites {
+    border-top: 4px solid #ea4335;
+    background: #fdecea;
+}
+
+/* Apps Externos - Amarelo */
+.apps-externos {
+    border-top: 4px solid #fbbc05;
+    background: #fff7e6;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    /* Ajuste no Grid para o Grupo Google Apps */
+    .group.google-apps .button-container {
+        grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
+    }
+}
+
+@media (max-width: 992px) {
+    /* Ajuste no Grid para o Grupo Google Apps */
+    .group.google-apps .button-container {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    }
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sidebar-links a {
+        padding: 10px 15px;
+    }
+
+    /* Ocultar todos os grupos inicialmente */
+    .group {
+        display: none;
+    }
+
+    /* Mostrar grupo ativo */
+    .group.active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Ajuste de margens para dispositivos móveis */
+    .header {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos Específicos para o Grupo Google Apps */
+.group.google-apps .button-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Cinco colunas */
+    gap: 12px;
+}
+
+@media (max-width: 1200px) {
+    .group.google-apps .button-container {
+        grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
+    }
+}
+
+@media (max-width: 992px) {
+    .group.google-apps .button-container {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    }
+}
+
+@media (max-width: 768px) {
+    .group.google-apps .button-container {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    }
+}
+
+@media (max-width: 576px) {
+    .group.google-apps .button-container {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+}
